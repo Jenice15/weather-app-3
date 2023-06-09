@@ -1,5 +1,5 @@
 body {
-    font-family: arial, sans-serif;
+    font-family: "Righteous", cursive;
 }
 #city {
     font-size: 24px;
@@ -93,13 +93,17 @@ li {
     position: relative;
     top: 20px;
     right: 160px;
-    font-size: 30px;
+    font-size: 25px;
 }
 .feels-like {
     position: relative;
     top: 98px;
     right: 170px;
     font-size: 25px;
+}
+.current-weather {
+    position: relative;
+    top: 20px;
 }
 .current-conditions {
     position: relative;
