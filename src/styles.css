@@ -1,122 +1,11 @@
 body {
     font-family: "Righteous", cursive;
 }
-#city {
-    font-size: 24px;
-    font-weight: 100;
-    line-height: 28px;
-    margin-top: -18px;
-    color: whitesmoke;
-}
-
-.hz-line {
-    display: block;
-    width: 100%;
-    border-top: 2px solid whitesmoke;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 1px;
-}
-ul {
-    margin: 0 0 10px;
-    padding: 0;
-}
-
-li {
-    font-size: 16px;
-    font-weight: 100;
-    height: 19px;
-    line-height: 1;
-    list-style: none;
-    color: whitesmoke;
-}
-
-.weather-app {
-    border: 1px solid #dadde1;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 600px;
-    height: 500px;
-    background-color: rgb(8, 8, 253);
-    color: whitesmoke;
-    text-align: center;
-}
-
 .heading {
     color: whitesmoke;
     text-align: center;
     margin-bottom: 18px;
     margin-top: 18px;
-}
-
-.weather-icon {
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
-}
-.sun-logo {
-    height: 80px;
-    width: 80px;
-    display: inline block;
-    position: relative;
-    top: -103px;
-    right: -160px;
-}
-.current-temperature {
-    position: relative;
-    right: 180px;
-    font-size: 60px;
-    font-weight: 400;
-    line-height: 1;
-    color: whitesmoke;
-    top: 43px;
-}
-.units {
-    position: relative;
-    top: 22px;
-    color: whitesmoke;
-    right: 120px;
-    font-size: 20px;
-}
-#celsius-link {
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-#fahrenheit-link {
-    color: whitesmoke;
-    text-decoration: none;
-}
-.description {
-    color: whitesmoke;
-    position: relative;
-    top: 20px;
-    right: 160px;
-    font-size: 25px;
-}
-.feels-like {
-    position: relative;
-    top: 98px;
-    right: 170px;
-    font-size: 25px;
-}
-.current-weather {
-    position: relative;
-    top: 20px;
-}
-.current-conditions {
-    position: relative;
-    right: -300px;
-    top: -90px;
-    font-size: 20px;
-}
-.current-date-time {
-    position: relative;
-    left: -200px;
-    top: 20px;
-    font-size: 30px;
-    color: whitesmoke;
 }
 
 .search-form {
@@ -151,6 +40,140 @@ li {
 ::placeholder {
     color: whitesmoke;
 }
+
+.hz-line {
+    display: block;
+    width: 100%;
+    border-top: 2px solid whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1px;
+}
+
+.current-date-time {
+    position: relative;
+    left: -200px;
+    top: 20px;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.weather-app {
+    border: 1px solid #dadde1;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    height: auto;
+    background-color: rgb(8, 8, 253);
+    color: whitesmoke;
+    text-align: center;
+}
+
+ul {
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    font-weight: 100;
+    height: 19px;
+    line-height: 1;
+    list-style: none;
+    color: whitesmoke;
+}
+
+.current-weather {
+    position: relative;
+    top: 20px;
+}
+.description {
+    color: whitesmoke;
+    position: relative;
+    top: 20px;
+    right: 160px;
+    font-size: 25px;
+}
+.current-temperature {
+    position: relative;
+    right: 180px;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    color: whitesmoke;
+    top: 43px;
+}
+
+.units {
+    position: relative;
+    top: 22px;
+    color: whitesmoke;
+    right: 120px;
+    font-size: 20px;
+}
+
+.feels-like {
+    position: relative;
+    top: 98px;
+    right: 170px;
+    font-size: 25px;
+}
+
+.weather-icon {
+    height: 64px;
+    width: 64px;
+    margin-right: 10px;
+}
+.sun-logo {
+    height: 80px;
+    width: 80px;
+    display: inline block;
+    position: relative;
+    top: -103px;
+    right: -160px;
+}
+
+.current-conditions {
+    position: relative;
+    right: -300px;
+    top: -90px;
+    font-size: 20px;
+}
+
+.weather-forecast {
+    margin-top: -60px;
+}
+
+.weather-forecast-day {
+    opacity: 0.8;
+}
+
+.weather-forecast-temp-min {
+    opacity: 0.8;
+}
+.weather-forcast-icon {
+    width: 50px;
+}
+
+#city {
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 28px;
+    top: -18px;
+    color: whitesmoke;
+}
+
+#celsius-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#fahrenheit-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 .coder-name {
     text-align: center;
     position: relative;
