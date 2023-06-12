@@ -62,13 +62,33 @@ function formatDate(timestamp) {
     return `Last updated : ${day} ${dt} ${hours}:${minutes} ${ext}`;
 }
 
-//function formatDay(timestamp) {
-//  let date = new Date(timestamp * 1000);
-//let day = date.getDay();
-//let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+function displayForecast(response) {
+    let forecast = document.querySelector("#forecast");
 
-//return day[days];
-//}
+    let forecastHTML = `<div class = "row">`;
+    let days = ["Sun", "Mon", "Tue", "Wed"];
+    days.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            `
+            <div class="col-2">
+                <div class="weather-forecast-day">
+                    ${day}
+                </div>
+                <img 
+                    src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" 
+                    alt="" class="weather-forcast-icon" >
+                <div class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temp-max"> 18° </span>
+                    <span class="weather-forecast-temp-min"> 16° </span>
+                </div>
+            </div>
+        `;
+    });
+    forecastHTML = forecastHTML + `<div>`;
+    forecast.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+}
 
 function displayTemp(response) {
     let currentTemperature = document.querySelector("#temperature");
@@ -147,3 +167,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("london");
+displayForecast();
