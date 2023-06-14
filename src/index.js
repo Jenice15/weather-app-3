@@ -43,53 +43,54 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     console.log(day);
 
-    let months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-    ];
-    let month = months[date.getMonth()];
-
     return `Last updated : ${day} ${dt} ${hours}:${minutes} ${ext}`;
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+}
+
 function displayForecast(response) {
-    console.log(response.data);
-    let forecast = document.querySelector("#forecast");
-    let days = ["Sun", "Mon", "Tue", "Wed"];
+    let forecast = response.data.daily;
 
-    let forecastHTML = `<div class = "row">`;
+    let forecastElement = document.querySelector("#forecast");
 
-    days.forEach(function (day) {
-        forecastHTML =
-            forecastHTML +
-            `
-            <div class="col-2">
-                <div class="weather-forecast-day">
-                    ${day}
-                </div>
-                <img 
-                    src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" 
-                    alt="" class="weather-forcast-icon" >
-                <div class="weather-forecast-temperatures">
-                    <span class="weather-forecast-temp-max"> 18° </span>
-                    <span class="weather-forecast-temp-min"> 16° </span>
-                </div>
-            </div>
-        `;
+    let forecastHTML = `<div class="row">`;
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
+            forecastHTML =
+                forecastHTML +
+                `
+       <div class="col-2">
+          <div class="weather-forecast-date">${formatDay(
+              forecastDay.time
+          )}</div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                }.png"
+                alt=""
+                width="42"
+                />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-max"> ${Math.round(
+                    forecastDay.temperature.maximum
+                )}° </span>
+                <span class="weather-forecast-min"> ${Math.round(
+                    forecastDay.temperature.minimum
+                )}° </span>
+              </div>
+       </div>
+       `;
+        }
     });
-    forecastHTML = forecastHTML + `<div>`;
-    forecast.innerHTML = forecastHTML;
-    console.log(forecastHTML);
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
