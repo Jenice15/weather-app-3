@@ -68,7 +68,7 @@ body {
 .weather-app {
     border: 2px solid orange;
     padding: 15px;
-
+    background-color: blue;
     margin: 20px auto;
     border-radius: 10px;
     max-width: 600px;

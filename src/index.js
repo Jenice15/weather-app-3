@@ -1,15 +1,8 @@
 function formatDate(timestamp) {
-    let date_format = "12";
     let date = new Date(timestamp);
     let hours = date.getHours();
+    let date_format = "12";
     let dt = date.getDate();
-
-    let bodyElement = document.getElementsByClassName("weather-app")[0];
-    if (hours >= 6 && hours < 18) {
-        bodyElement.style.backgroundColor = " #2cc8f7"; // morning
-    } else {
-        bodyElement.style.backgroundColor = "#0e2e7f"; // night
-    }
 
     let result = hours;
     let ext = "";
@@ -27,6 +20,7 @@ function formatDate(timestamp) {
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
+
     if (date_format == "12") {
         if (hours > 12) {
             ext = "PM";
@@ -43,6 +37,7 @@ function formatDate(timestamp) {
             ext = "PM";
         }
     }
+
     let days = ["Sun", "Mon", "Tue", "wed", "Thu", "Fri", "Sat"];
     let day = days[date.getDay()];
     console.log(day);
