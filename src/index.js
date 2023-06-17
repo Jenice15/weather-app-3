@@ -4,6 +4,13 @@ function formatDate(timestamp) {
     let hours = date.getHours();
     let dt = date.getDate();
 
+    let bodyElement = document.getElementsByClassName("weather-app")[0];
+    if (hours >= 6 && hours < 18) {
+        bodyElement.style.backgroundColor = " #2cc8f7"; // morning
+    } else {
+        bodyElement.style.backgroundColor = "#0e2e7f"; // night
+    }
+
     let result = hours;
     let ext = "";
     if (hours < 10) {
@@ -28,9 +35,6 @@ function formatDate(timestamp) {
 
             if (hours < 10) {
                 result = "0" + hours;
-            } else if (hours == 12) {
-                hours = "00";
-                ext = "AM";
             }
         } else if (hours < 12) {
             result = hours < 10 ? "0" + hours : hours;
@@ -59,7 +63,8 @@ function displayForecast(response) {
 
     let forecastElement = document.querySelector("#forecast");
 
-    let forecastHTML = `<div class="row">`;
+    let forecastHTML = `<div class="row">
+`;
     forecast.forEach(function (forecastDay, index) {
         if (index < 6) {
             forecastHTML =
@@ -89,7 +94,7 @@ function displayForecast(response) {
         }
     });
 
-    forecastHTML = forecastHTML + `</div>`;
+    forecastHTML = forecastHTML + `</div> `;
     forecastElement.innerHTML = forecastHTML;
 }
 
@@ -119,11 +124,11 @@ function displayTemp(response) {
     city.innerHTML = response.data.city;
     feelsLike.innerHTML = `RealFeel : ${Math.round(
         response.data.temperature.feels_like
-    )}`;
+    )}&deg`;
     // logo.innerHTML = response.data.condition.icon_url;
-    humidity.innerHTML = `Humidity : ${response.data.temperature.humidity}`;
-    pressure.innerHTML = `Pressure : ${response.data.temperature.pressure}`;
-    wind.innerHTML = `Wind : ${Math.round(response.data.wind.speed)}Km/h`;
+    humidity.innerHTML = `Humidity : ${response.data.temperature.humidity}%`;
+    pressure.innerHTML = `Pressure : ${response.data.temperature.pressure} `;
+    wind.innerHTML = `Wind : ${Math.round(response.data.wind.speed)} mph`;
     date.innerHTML = formatDate(response.data.time * 1000);
     description.innerHTML = `${response.data.condition.description}`;
 
