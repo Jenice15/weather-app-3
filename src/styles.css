@@ -17,7 +17,11 @@ body {
     border: 1px solid whitesmoke;
     border-radius: 8px;
     outline: none;
-    background-color: orange;
+    background: linear-gradient(
+        109.6deg,
+        rgb(237, 150, 231) 12.6%,
+        rgb(191, 159, 237) 91.1%
+    );
     height: 35px;
     width: 200px;
     color: whitesmoke;
@@ -30,7 +34,7 @@ body {
     border: 1px solid whitesmoke;
     border-radius: 8px;
     outline: none;
-    background-color: orange;
+    background-color: #c39ffe;
     height: 35px;
     width: 80px;
     color: whitesmoke;
@@ -60,9 +64,21 @@ body {
 }
 
 .weather-app {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     padding: 15px;
-    background-color: blue;
+    /* background: linear-gradient( */
+    /* 107deg, */
+    /* rgb(2, 108, 223) 27.4%, */
+    /* rgb(0, 255, 255) 92.7% */
+    /* ); */
+    /* background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+    /* background: linear-gradient( */
+    /* 138deg, */
+    /* rgb(32, 201, 255) 36.7%, */
+    /* rgb(0, 8, 187) 84.4%, */
+    /* rgb(255, 255, 255) 119.7% */
+    /* ); */
+    background: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
     margin: 20px auto;
     border-radius: 10px;
     max-width: 600px;
@@ -179,4 +195,5 @@ li {
     text-align: center;
     position: relative;
     top: -20px;
+    color: #ac9dfc;
 }
